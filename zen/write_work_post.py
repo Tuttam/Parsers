@@ -4,7 +4,7 @@ import shutil
 from PIL import Image
 
 
-login = "leragrgrishina"
+login = "vasilisatcheshkova"
 
 
 def main():
@@ -52,8 +52,6 @@ def create_content():
     with open(f"work-files/{login}/{login}_id.txt", "r", encoding="utf-8") as f:
         list_id = f.readlines()
 
-    rnd_num_of_posts = random.randrange(7, 8)
-
     # Смайлы:
 
     with open("chars.txt", "r", encoding="utf_8") as file:
@@ -71,6 +69,8 @@ def create_content():
 
     for i in range(0, rand_int_char):
         str_char += one_char
+
+    rnd_num_of_posts = random.randrange(14, 17)
 
     for i in range(0, rnd_num_of_posts):
 
@@ -94,14 +94,13 @@ def create_content():
                 break
 
         if test_out != 0:
+            test_out = 0
             continue
 
         with open(f"work-files/{login}/{login}_id.txt", "a", encoding="utf-8") as f:
             f.write(f"{anecdote_id}\n")
 
         one_anecdote = one_anecdote.replace("||", "\n")
-
-
 
         with open(f"work-files/{login}/{login}_content.txt", "a", encoding="utf-8") as f:
             f.write(f"{one_anecdote}\n{str_char}\n")
@@ -115,7 +114,7 @@ def create_images():
 
     for_while = 0
 
-    while for_while < 1:
+    while for_while < 2:
 
         with open(f"work-files/{login}/{login}_images.txt", "r", encoding="utf-8") as f:
             list_black_images = f.readlines()

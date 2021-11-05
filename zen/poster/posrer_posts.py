@@ -79,15 +79,17 @@ try:
     close_button = driver.find_elements(By.XPATH, "//div[contains(@role, 'button')]")
     if len(close_button) > 0:
         driver.find_element(By.XPATH, "//div[contains(@role, 'button')]").click()
+        sleep(2)
 
-    driver.find_element(By.XPATH, "//div[contains(@class, 'zen-editor')]/div[contains(@class, 'DraftEditor-root')]/div[contains(@class, 'public-DraftEditorPlaceholder-root')]").click()
+    driver.find_element(By.XPATH, "//div[contains(@class, 'zen-editor')]").click()
+    # driver.find_element(By.XPATH, "//div[contains(@class, 'zen-editor')]/div[contains(@class, 'DraftEditor-root')]/div[contains(@class, 'public-DraftEditorPlaceholder-root')]").click()
     sleep(1)
-    driver.find_element(By.XPATH, "//div[contains(@class, 'zen-editor')]/div[contains(@class, 'DraftEditor-root')]/div[contains(@class, 'public-DraftStyleDefault-block public-DraftStyleDefault-ltr')]").send_keys("2222222")
+    # driver.find_element(By.XPATH, "//div[contains(@id, 'public-DraftEditorPlaceholder-root public-DraftEditorPlaceholder-hasFocus')]").send_keys("2222222")
 
 except Exception as _ex:
     print(_ex)
 
 finally:
-    sleep(5)
+    sleep(500)
     driver.close()
     driver.quit()
